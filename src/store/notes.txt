@@ -1,0 +1,15 @@
+# We cannot use side effects(eg fetching data async) in pure reducer function of redux but most of our methods are defined under reducer function .
+for solving that we have to options
+1.using useeffect as we are using it from starting
+2.creating actions (action creator)
+
+
+>>we cannot change the existing object while working with redux,we have to generate new obj everytime with all the values(no mutation of obj)
+>>But we can change the obj(existing obj) when working with redux-toolkit because back of the scene it uses a package name mer which creates a clone of the previous obj and change only that value which has been updated
+##KEEP IN MIND YOU CAN MUTATE THE OBJ ONLY IN REDUCER FUNCTION   OF SLICE NOT ELSE WHERE 
+
+>>You cannot make useeffect's function async for any promise dependent function instead you should create a async function inisde use effect function
+
+
+THUNK:A function that delays untill later
+>>an action creator function that doesnt return the action itself but another function returns action eventually
